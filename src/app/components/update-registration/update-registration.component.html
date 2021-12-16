@@ -1,0 +1,28 @@
+<h3>Update Registration</h3>
+<a routerLink='/view-registration' class="btn btn-link">View User</a>
+<br><br>
+<form>
+
+      <label for="userName">User Name</label><br>
+      <input type="text" class="form-control" id="userName" placeholder="User name" [(ngModel)]="registeruser.userName"
+        name="userName">
+    <br><br>
+      <label for="emailaddress">Email Address</label><br>
+      <input type="text" class="form-control" id="emailaddress" placeholder="Emailaddress"
+        [(ngModel)]="registeruser.emailaddress" name="emailaddress">
+    <br><br>
+      <label for="mobileNumber">Mobile Number </label><br>
+      <input type="text" class="form-control" id="mobileNumber" placeholder="MobileNumber"
+        [(ngModel)]="registeruser.mobileNumber" name="mobileNumber">
+    <br><br>
+    <label for="password">Password</label><br>
+      <input type="text" class="form-control" id="password" placeholder="Password" [(ngModel)]="registeruser.password"
+        name="password">
+    <br><br>
+      <label for="confirmPassword">Confirm Password</label><br>
+      <input type="text" class="form-control" id="confirmPassword" placeholder="ConfirmPassword"
+        [(ngModel)]="registeruser.confirmPassword" name="confirmPassword">
+    <br>
+       <br>
+      <button type="button" class="btn btn-success" (click)="update()">Update</button>
+</form>

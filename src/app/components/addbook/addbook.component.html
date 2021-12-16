@@ -1,0 +1,42 @@
+<h1>Add Book</h1>
+    <form>
+
+        <label for="bookTitle">BookTitle</label>
+        <input type="text" class="form-control" id="bookTitle" placeholder="bookTitle" [(ngModel)]="book.bookTitle"
+            name="bookTitle">
+
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="description"
+            [(ngModel)]="book.description" name="description">
+
+        <label for="bookPrice">BookPrice</label>
+        <input type="text" class="form-control" id="bookPrice" placeholder="bookPrice" [(ngModel)]="book.bookPrice"
+            name="bookPrice">
+
+        <label for="publisherId">PublisherId</label>
+        <input type="text" class="form-control" id="publisherId" placeholder="publisherId"
+            [(ngModel)]="book.publisherId" name="publisherId">
+            <br>
+             <input type="file" (change)="onFileChanged($event)">
+             <img [src]="imgURL" height="150" width="150" *ngIf="imgURL">
+        <br>
+        <button type="button" class="btn btn-success" (click)="addBook()">Save</button>
+    </form>
+
+<!-- <div>
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>bookTitle</label>
+            <input type="text" class="form-control" formControlName="bookTitle">
+        
+            <span class="text-danger"
+                *ngIf="(registerFormControl.bookTitle.touched || submitted) && registerFormControl.bookTitle.errors?.required">
+                Name is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Register</button>
+        </div>
+    </form>
+</div> -->

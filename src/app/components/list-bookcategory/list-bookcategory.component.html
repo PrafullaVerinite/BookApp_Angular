@@ -1,0 +1,33 @@
+<h1>View Book Category</h1>
+&nbsp;&nbsp;<a class="btn btn-primary mb-3" (click)="addBookCategory()">add</a>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+<div class="container row">
+     <div  class="col-md-6">
+         <table class="table">
+             <thead>
+                 <tr>
+                    <!--         <th>ID</th> -->
+                     <th>BookId</th>
+                     <th>CategoryId</th>
+                     <th>Actions</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bookg of book ">
+                     <td>{{bookg.bookId}}</td>
+                     <td>{{bookg.categoryId}}</td>
+                     <td><button type="button" (click)="updatebook(bookg.id)" class="btn btn-primary">
+                            <i class="fas fa-pencil-alt"></i></button>
+                    </td>
+                    <td><button type="button" (click)="getview(bookg.id)" class="btn btn-primary">
+                            <i class="fas fa-eye"></i></button>
+                    </td>
+                    <!-- <td><button type="button" class="btn btn-primary" (click)="viewBook(book.bookId)"><i
+                        class="fas fa-eye"></i></button></td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+<h2> Order details </h2>
+<div class="">
+    <table class="table table-bordered ">
+        <tr>
+            <th>orderId</th>
+            <th>orderedDate</th>
+            <th>bookId</th>
+            <th>bookName</th>
+            <th>createdOn</th>
+            <th>updatedOn</th>
+            <!-- <th>actions</th> -->
+        </tr>
+        <tr *ngFor="let order of lstOrderBook">
+            <td>{{order.orderId}}</td>
+            <td>{{order.orderedDate | date:'dd/mm/yy'}}</td>
+            <td>{{order.bookId}}</td>
+            <td>{{order.bookName}}</td>
+            <td>{{order.createdOn | date:'dd/mm/yy'}}</td>
+            <td>{{order.updatedOn |date:'dd/mm/yy'}}</td>
+
+        </tr>
+    </table>
+</div>

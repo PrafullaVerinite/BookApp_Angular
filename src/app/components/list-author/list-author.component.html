@@ -1,0 +1,36 @@
+<h1>Author Details</h1>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+&nbsp;&nbsp;<a class="btn btn-primary mb-3" (click)="addAuthor()">add</a>
+
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>AuthorId</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>CreatedOn</th>
+          <th>Delete</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let author of listOfAuthors ">
+          <td>{{author.authorId}}</td>
+          <td>{{author.firstName}}</td>
+          <td>{{author.lastName}}</td>
+          <td>{{author.createdOn | date:"dd/MM/y"}}</td>
+          <td>{{author.deleted}}</td>
+
+          <!-- <td><button type="button" class="btn btn-primary" (click)="showUserDetails(register.registerId)"><i
+                                class="fas fa-eye"></i></button></td> -->
+          <td><button class="btn btn-primary" (click)="delete(author.authorId)"> <i class="fas fa-trash"></i></button>
+          </td>
+          <td><button class="btn btn-primary" (click)="update(author.authorId)"> <i
+                class="fas fa-pencil-alt"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

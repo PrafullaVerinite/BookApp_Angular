@@ -1,0 +1,45 @@
+<h1>Books Admin</h1>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+<!-- <div>&nbsp;&nbsp;<button type="button" class="btn btn-primary">Add Books</button></div> -->
+&nbsp;&nbsp;<a class="btn btn-primary mb-3" (click)="addBook()">add</a>
+<!-- <a [routerLink]="['/users']" class="btn btn-link">Register</a> -->
+
+<div class="container row">
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books">
+                    <td>{{book.bookId}}</td>
+                    <td>{{book.bookTitle}}</td>
+                    <!-- <td>
+                        <button type="button" class="btn btn-primary" (click)="viewBook(book.bookId)"> Show
+                            Details</button>
+                    </td> -->
+                    <td><button type="button" class="btn btn-primary" (click)="viewBook(book.bookId)"><i
+                                class="fas fa-eye"></i></button></td>
+                    <td><button class="btn btn-primary" (click)="deleteBook(book.bookId)"> <i
+                                class="fas fa-trash"></i></button></td>
+                    <td><button class="btn btn-primary" (click)="updateBook(book.bookId)"> <i
+                                class="fas fa-pencil-alt"></i></button></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <app-addbook *ngIf="action === 'add'" [book]="selectedBook" (bookAddedEvent)="refreshData()"></app-addbook>
+        <!--     <app-addbook *ngIf="action === 'add'" [book]="selectedBook"></app-addbook> -->
+
+        <app-viewbook *ngIf="action === 'view'" [book]="selectedBook" (bookDeletedEvent)="refreshData()"></app-viewbook>
+        <!-- <app-viewbook *ngIf="action === 'view'" [book]="selectedBook" (bookDeletedEvent)="refreshData()"></app-viewbook> -->
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div>
+    <!-- form fields below -->
+    <form>
+     <input type="text" class="form-control" id="firstName" [(ngModel)]="updateData.firstName" placeholder="First Name" name="firstName" />
+     <input type="text" class="form-control" id="lastName" [(ngModel)]="updateData.lastName" placeholder="Last Name"  name="lastName"/>
+  
+     <label for="bookTitle">BookTitle</label>
+  <!--  <input type="text" class="form-control" id="bookTitle" placeholder="user name" [(ngModel)]="book.bookTitle" name="bookTitle"> -->
+     <button (click)="updateAuthor()">update</button>
+    </form>
+    </div>
+  
